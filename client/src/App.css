@@ -38,4 +38,12 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 1181px;
+}
+
+.giffy-embed {
+  width: 1000px;
+  height: 550px;
+  padding-bottom: 56%;
+  position: relative;
 }

@@ -31,6 +31,7 @@
 
 .card-image {
   width: 115px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -41,6 +42,7 @@
   position: absolute;
   height: 115px;
   width: 150px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 

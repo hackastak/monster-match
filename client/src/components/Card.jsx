@@ -13,18 +13,20 @@ const Card = (props) => {
   return (
     <div className='card-container'>
       <div
-        className={'card ' + (isInactive && 'cleared')}
+        className={'card ' + (isInactive && 'cleared') + ' card-' + (isFlipped)}
         onClick={handleClick}
       >
         <div className='image-container' name={props.card.name}>
-          {isFlipped ? (
+          <div className='card-front-face'>
             <img
-              className='card-image card-front-face'
-              src={props.card.image}
+              className='card-image' 
+              src={monsterMatchLogo}
             />
-          ) : (
-            <img className='card-image card-back-face' src={monsterMatchLogo} />
-          )}
+          </div>
+          <div className='card-back-face'>
+            <img className='card-image'  src={props.card.image} />
+          </div>
+               
         </div>
       </div>
     </div>
@@ -37,6 +39,7 @@ Card.propTypes = {
   onClick: PropTypes.func,
   isFlipped: PropTypes.bool,
   isDisabled: PropTypes.bool,
+  isInactive: PropTypes.bool,
 };
 
 export default Card;

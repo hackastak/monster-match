@@ -38,12 +38,18 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 1181px;
+  width: 800px;
 }
 
 .giffy-embed {
-  width: 1000px;
-  height: 550px;
+  width: 750px;
+  height: 420px;
+  margin-top: 30px;
   padding-bottom: 56%;
   position: relative;
+}
+
+.btn-highlight {
+  background-color: #58aae8;
+  color: black;
 }

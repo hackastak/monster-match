@@ -3,11 +3,17 @@
 }
 
 .card {
-  width: 200px;
-  height: 150px;
+  width: 150px;
+  height: 115px;
   border: 10px solid white;
   border-radius: 8px;
   background: black;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-true {
+  transform: rotateY(180deg);
 }
 
 .cleared {
@@ -20,8 +26,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
 }
 
 .card-image {
-  max-width: 150px;
+  width: 115px;
+  backface-visibility: hidden;
+}
+
+.card-front-face, .card-back-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 115px;
+  width: 150px;
+  backface-visibility: hidden;
+}
+
+.card-back-face {
+  transform: rotateY(180deg);
 }

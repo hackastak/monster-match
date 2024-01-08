@@ -76,7 +76,7 @@ const App = () => {
   const checkCompletion = () => {
     if (Object.keys(clearedCards).length === uniqueCards.length) {
       console.log('YOU WON!!!');
-      setPlaying(false);
+      
       setWinnerCircle(true);
     }
   };
@@ -149,7 +149,7 @@ const App = () => {
   return (
     <>
       <h1>Monster Match</h1>
-      {playing ? (
+      {(playing && !winnerCircle) && (
         <>
           <div className='game-board-container'>
             {cards.map((card, index) => {
@@ -170,7 +170,13 @@ const App = () => {
             Restart
           </button>
         </>
-      ) : (
+      )}
+      {(playing && winnerCircle) && (
+        <button className='btn-highlight' onClick={handleRestart}>
+          Play Again
+        </button>
+      )}  
+      {(!playing) && (
         <button className='btn-main' onClick={playGame}>
           Play Game
         </button>
@@ -185,11 +191,6 @@ const App = () => {
               allowFullScreen
             ></iframe>
           </div>
-          <p>
-            <a href='https://giphy.com/gifs/monsterjam-monster-jam-grave-digger-dennis-anderson-POpr7nTrhogeI'>
-              via GIPHY
-            </a>
-          </p>
         </>
       )}
     </>

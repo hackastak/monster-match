@@ -178,7 +178,7 @@ const App = () => {
       )}  
       {(!playing) && (
         <button className='btn-main' onClick={playGame}>
-            Fieldglass
+          Play Game
         </button>
       )}
       {winnerCircle && (
